@@ -1,0 +1,7 @@
+# ruff config
+[tool.ruff]
+ignore-init-module-imports = true
+
+exclude = [
+    "tests/habitica_src"
+]
