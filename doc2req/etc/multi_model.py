@@ -65,4 +65,22 @@ class MultiModelMeta(ModelMetaclass):
     
         
 class MultiModel(BaseModel, metaclass=MultiModelMeta):
-    pass
+    """
+    MultiModel is a BaseModel that allows derivation of subclasses on creation
+
+    ### Example:
+    ```python
+    class Ex0(MultiModel):
+        # by default, type var is used to determine the subclass
+
+    class Ex1(Ex0):
+        type = "ex1"
+    
+    class Ex2(Ex0):
+        type = "ex2"
+
+    assert isinstance(Ex0(type="ex1"), Ex1)
+    assert isinstance(Ex0(type="ex2"), Ex2)
+
+    ```
+    """
