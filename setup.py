@@ -12,7 +12,8 @@ setup(
     include_package_data=True,
     install_requires=["pydantic", "requests", "parse", "orjson"],
     python_requires=">=3.9",
-    long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
+    long_description=open("README.md").read(),
+    
 )
 

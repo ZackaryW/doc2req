@@ -13,7 +13,9 @@ pip install doc2req
 ```
 
 ## Usage
+
 generate apidoc specifications from source files
+
 ```python
 api : Api = from_src("src", clear_generated_node_modules=True)
 ```
@@ -44,20 +46,19 @@ obj : List[Point] | [] = api["group::all::User"]
 
 point data structure
 ```python
-class Point(BaseModel):
-    name : str
-    type : typing.Literal["post", "get", "put", "delete", "patch"]
-    url : str
-    title : str
-    description : str = None
-    group : str
-    parameter : typing.List[Parameter] = Field(default_factory=list)
-    error : typing.List[Return] = None
-    version : str = None
-    filename : str = None
-    groupTitle : str = None
-    examples : typing.List[Example] = None
-    success : typing.List[Return] = None
+name : str
+type : typing.Literal["post", "get", "put", "delete", "patch"]
+url : str
+title : str
+description : str = None
+group : str
+parameter : typing.List[Parameter] = Field(default_factory=list)
+error : typing.List[Return] = None
+version : str = None
+filename : str = None
+groupTitle : str = None
+examples : typing.List[Example] = None
+success : typing.List[Return] = None
 ```
 
 create a request
