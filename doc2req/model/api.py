@@ -1,8 +1,39 @@
 import typing
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel
 from doc2req.model.point import Point
 
 class Api(BaseModel):
+    """
+    Api object is a collection of points
+
+    supports rich __getitem__ methods
+
+    ### examples:
+
+    ```python
+    api = Api(points=points)
+    # returns login point object by name
+    obj : Point | None = api["name::UserLoginLocal"] 
+
+    # returns login point object by url
+    obj : Point | None = api["url::/api/v3/user/login"]
+
+    # returns login point object by title
+    obj : Point | None = api["title::User Login"]
+
+    # returns first point object in group User
+    obj : Point | None = api["group::User"]
+    obj : Point | None = api["group::first::User"]
+
+    # returns last point object in group User
+    obj : Point | None = api["group::last::User"]
+    
+    # returns all point objects in group User
+    obj : List[Point] | [] = api["group::all::User"]
+
+    ```
+    """
+
     points : typing.List[Point]
 
     def by_name(self, name :str):
