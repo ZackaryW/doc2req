@@ -7,7 +7,6 @@ class t_tool(unittest.TestCase):
     def test_gen_tool(self):
         x = from_src(
             "tests/habitica_src", 
-            "tests.json", 
             clear_generated_node_modules=True
         )
         self.assertIsInstance(x, Api)
