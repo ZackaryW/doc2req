@@ -15,10 +15,7 @@ pip install doc2req
 ## Usage
 generate apidoc specifications from source files
 ```python
-api : Api = from_src(
-    "src", 
-    clear_generated_node_modules=True
-)
+api : Api = from_src("src", clear_generated_node_modules=True)
 ```
 
 access nodes
@@ -85,5 +82,4 @@ result : RequestResult = helper.execute()
 
 result.res : requests.Response
 
-```
 ```
