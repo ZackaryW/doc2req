@@ -5,6 +5,7 @@ ignore-init-module-imports = true
 exclude = [
     "tests/habitica_src"
 ]
+line-length = 98
 
 [tool.ruff.per-file-ignores]
 "**/__init__.py" = ["F401"]
