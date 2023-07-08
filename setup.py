@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="doc2req",
-    version="0.9.0",
+    version="0.9.1",
     description="apidoc to dataclasses and other useful utilities",
     author="Zackary W",
     url="https://github.com/ZackaryW/doc2req",

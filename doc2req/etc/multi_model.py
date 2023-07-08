@@ -1,7 +1,11 @@
 
 
-from pydantic import BaseModel
-from pydantic.main import ModelMetaclass
+from pydantic import BaseModel, VERSION
+
+if VERSION.startswith("1."):
+    from pydantic.main import ModelMetaclass
+else:
+    from pydantic._internal._model_construction import ModelMetaclass
 
 class MultiModelMeta(ModelMetaclass):
     """
